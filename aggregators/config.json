@@ -1,0 +1,15 @@
+[
+    {
+	"className" : "standartDeviationAggregator",
+	"buttonText" : "Standart deiviation",
+	"axisLabel" : "Standart deviation",
+	"axisUnits" : ""	
+    },
+    {
+	"className" : "meanPercentsAggregator",
+	"buttonText" : "Mean in percents",
+	"axisLabel" : "Mean",
+	"axisUnits" : "%"
+    }
+]
+
