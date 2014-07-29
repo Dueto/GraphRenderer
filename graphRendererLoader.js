@@ -19,7 +19,8 @@ function loadScripts(urls)
     }
 };
 
-var urls = ["../graphrenderer/datacaching/webSockets.js",
+var urls = ["../graphrenderer/datacaching/dataStream.js",
+            "../graphrenderer/datacaching/webSockets.js",
             "../graphrenderer/helpers/dataHandler.js",
             "../graphrenderer/helpers/historyHandler.js",
             "../graphrenderer/helpers/dateTimeFormat.js",

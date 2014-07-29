@@ -34,8 +34,8 @@ var detailChartRenderer = function(containerId)
     me.axes = null;
     me.axesToShow = [];  
     me.axesToChannels = [];  
-    me.neddenAxes = [];    
-     
+    me.neddenAxes = [];
+
     me.selectedXExtremes = null;
     me.selectedYExtremes = []; 
     me.resetXAxisAfterRenderTime = false;
@@ -2564,7 +2564,7 @@ var detailChartRenderer = function(containerId)
     {
      jQuery.ajax(
         {
-            url: me.hostURL + "/adei2/graphrenderer/aggregators/config.json",
+            url: "../graphrenderer/aggregators/config.json",
             complete: function(data)
             {
                 me.initializeAggregators(data);
