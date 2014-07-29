@@ -140,7 +140,7 @@ var detailChartRenderer = function(containerId)
                     alert('You setted up more then 10 channels.');
                     return;
                 }
-                self.axes.concat(getAllAxes(virtualSources[i]));
+                self.axes.concat(self.getAllAxes(virtualSources[i]));
                 self.formAxesInfo(virtualSources[i]);
                 if(experiment === '-' || experiment === '*-*')
                 { 

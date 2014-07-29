@@ -407,6 +407,7 @@ var dataCacher = function(communicationType, isCache, isCacheDown, isCacheUp, is
             try
             {
                 this.db = openDatabase(name, '1.0', '', 300 * 1024 * 1024) || window.openDatabase(name, '1.0', '', 300 * 1024 * 1024);
+                this.dropDatabase();             
             }
             catch(ex)
             {
@@ -420,6 +421,23 @@ var dataCacher = function(communicationType, isCache, isCacheDown, isCacheUp, is
             }
             
         }
+    };
+
+    me.dropDatabase = function()
+    {
+        this.db.transaction(function(req)
+        {
+            req.executeSql('SELECT tbl_name from sqlite_master WHERE type = "table"',[], function(req, results)
+                {
+                    for(var i = 1; i < results.rows.length; i++)
+                    {
+                        if(results.rows.item(i)['tbl_name'] !== 'sqlite_sequence')
+                        req.executeSql('DROP TABLE "' + results.rows.item(i)['tbl_name'] + '"',[],function(){});                        
+                    }
+                },
+                function(){},
+                function(){});
+        });   
     };
 
     me.formDataBase = function()
